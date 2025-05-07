@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin giá vàng, tỷ giá và thời tiết</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        h2 { color: #555; }
+        .error { color: red; }
+        img { max-width: 100%; height: auto; }
+    </style>
+</head>
+<body>
+    <h1>Thông tin thị trường và thời tiết</h1>
+
+    <!-- Giá vàng -->
+    <h2>Giá vàng (USD)</h2>
+    <p>Giá vàng: {{ gold_price }} USD/ounce</p>
+
+    <!-- Biểu đồ giá vàng -->
+    <h2>Biểu đồ giá vàng</h2>
+    <img src="{{ url_for('static', filename=chart_image) }}" alt="Biểu đồ giá vàng">
+
+    <!-- Thời tiết -->
+    <h2>Thời tiết tại Hà Nội</h2>
+    <p>Nhiệt độ: {{ weather_temp }}°C</p>
+    <p>Mã thời tiết: {{ weather_code }}</p>
+
+    <!-- Tỷ giá -->
+    <h2>Tỷ giá ngoại tệ</h2>
+    <p>USD sang VND: {{ usd_to_vnd }}</p>
+</body>
+</html>
